@@ -29,4 +29,20 @@ class categoriascontroller extends Controller
 
     	return redirect('/');
     }
+
+    public function editar($id){
+        $categorias=Categorias::find($id);
+               
+        return view('', compact('categorias'));
+    }
+
+     public function actualizar(Request $datos, $id){
+        $categorias=Categorias::find($id);
+        $categorias->nombre=$datos->input('nombre');
+        $categorias->descripcion=$datos->input('descripcion');
+        $categorias->save();//Guarda objeto
+        flash('¡Se ha actualizado la categoria correctamente!')->success();
+
+        return redirect('/');
+    }
 }
