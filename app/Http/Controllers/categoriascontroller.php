@@ -21,4 +21,12 @@ class categoriascontroller extends Controller
         flash('¡Categoria guardada con éxito!')->success();
 
     	return redirect('/');
+	}
+    	public function eliminar($id){
+    	$categorias=Categorias::find($id);
+    	$categorias->delete();
+        flash('¡Categoria Eliminada!')->success();
+
+    	return redirect('/');
+    }
 }
