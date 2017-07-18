@@ -19,3 +19,10 @@ Route::get('/registrarcategorias', 'categoriascontroller@registrar');
 
 Route::post('/guardarcategorias','categoriasontroller@guardar');
 
+Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
+
+Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
+
+Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
+
+
