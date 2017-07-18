@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/registrarcategorias', 'categoriascontroller@registrar');
+
+Route::post('/guardarcategorias','categoriasontroller@guardar');
+
+Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
+
+Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
+
+Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
+
+
