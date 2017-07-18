@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/registrarcategorias', 'categoriascontroller@registrar');
+
+Route::post('/guardarcategorias','categoriasontroller@guardar');
+
