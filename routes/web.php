@@ -44,6 +44,8 @@ Route::get('/editararticulos/{id}', 'articuloscontroller@editar');
 Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
 
 
-Route::get('/articulosPDF', 'articulosController@pdf');
+Route::get('/articulosPDF', 'articuloscontroller@pdf');
 
-Route::get('/consultararticulos', 'articulosController@consultar');
+Route::get('/consultararticulos', 'articuloscontroller@consultar');
+
+Route::get('/consultarCategorias', 'categoriascontroller@consultarCategorias')
