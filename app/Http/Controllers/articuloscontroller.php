@@ -36,4 +36,14 @@ class articuloscontroller extends Controller
                
         return view('', compact('articulos'));
     }
+
+    public function actualizar(Request $datos, $id){
+        $articulos=Articulos::find($id);
+        $articulos->nombre=$datos->input('nombre');
+        $articulos->descripcion=$datos->input('descripcion');
+        $articulos->save();//Guarda objeto
+        flash('¡Se ha actualizado el articulo correctamente!')->success();
+
+        return redirect('/');
+    }
 }
