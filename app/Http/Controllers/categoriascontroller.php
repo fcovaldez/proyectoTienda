@@ -35,6 +35,10 @@ class categoriascontroller extends Controller
                
         return view('', compact('categorias'));
     }
+    public function consultarCategorias(){
+        $categorias=Categorias::all();
+        return view('', compact('categorias'));
+    }
 
      public function actualizar(Request $datos, $id){
         $categorias=Categorias::find($id);
