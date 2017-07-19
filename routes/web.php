@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/admin','AdminController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -28,5 +29,6 @@ Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
 Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
+
 
 
