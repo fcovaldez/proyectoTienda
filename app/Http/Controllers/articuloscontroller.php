@@ -22,4 +22,12 @@ class articuloscontroller extends Controller
 
     	return redirect('/');
 	}
+
+	public function eliminar($id){
+    	$articulos=Articulos::find($id);
+    	$articulos->delete();
+        flash('¡Articulo Eliminado!')->success();
+
+    	return redirect('/');
+    }
 }
