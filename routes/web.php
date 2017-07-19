@@ -40,3 +40,5 @@ Route::post('/guardararticulos','articulosontroller@guardar');
 Route::get('/eliminararticulos/{id}', 'articuloscontroller@eliminar');
 
 Route::get('/editararticulos/{id}', 'articuloscontroller@editar');
+
+Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
