@@ -46,4 +46,7 @@ class articuloscontroller extends Controller
 
         return redirect('/');
     }
+    public function consultararticulos(){
+        $articulos=Articulos::all();
+        return view('', compact('articulos'));
 }
