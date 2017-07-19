@@ -30,4 +30,10 @@ class articuloscontroller extends Controller
 
     	return redirect('/');
     }
+
+    public function editar($id){
+        $articulos=Articulos::find($id);
+               
+        return view('', compact('articulos'));
+    }
 }
