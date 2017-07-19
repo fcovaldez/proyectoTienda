@@ -36,3 +36,5 @@ Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
 Route::get('/registrararticulos', 'articuloscontroller@registrar');
 
 Route::post('/guardararticulos','articulosontroller@guardar');
+
+Route::get('/eliminararticulos/{id}', 'articuloscontroller@eliminar');
