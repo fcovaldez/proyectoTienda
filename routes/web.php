@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//Categorias
 Route::get('/registrarcategorias', 'categoriascontroller@registrar');
 
 Route::post('/guardarcategorias','categoriasontroller@guardar');
@@ -29,4 +31,7 @@ Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
 
+
+//Articulos
+Route::get('/registrararticulos', 'articuloscontroller@registrar');
 
