@@ -17,6 +17,8 @@ class articuloscontroller extends Controller
     	$articulos= new Articulos(); //objeto del modelo encargado para registrar encargados
     	$articulos->nombre=$datos->input('nombre');
     	$articulos->descripcion=$datos->input('descripcion');
+    	$articulos->precio=$datos->input('precio');
+    	$articulos->existencia=$datos->input('existencia');
     	$articulos->save();
         flash('¡Articulo guardado con éxito!')->success();
 
