@@ -27,7 +27,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clientes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Registrar Cliente</a></li>
+            <li><a href="{{url('/registrarcategorias')}}">Registrar Cliente</a></li>
             <li><a href="#">Consultar Clientes</a></li>
           </ul>
         </li>

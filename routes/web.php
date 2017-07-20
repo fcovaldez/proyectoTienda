@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Categorias
 Route::get('/registrarcategorias', 'categoriascontroller@registrar');
-Route::post('/guardarcategorias','categoriasontroller@guardar');
+Route::post('/guardarcategorias','categoriascontroller@guardar');
 Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
 Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');

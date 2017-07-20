@@ -9,7 +9,7 @@ use App\Categorias;
 class categoriascontroller extends Controller
 {
     public function registrar(){
-    	return view('registrarCategorias');
+    	return view('registrarcategorias');
     }
 
     public function guardar(Request $datos){

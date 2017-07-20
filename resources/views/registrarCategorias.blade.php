@@ -1,4 +1,4 @@
-@extends('master')
+@extends('adminMaster')
 
 @section('contenido')
 <form action="{{url('/guardarcategorias')}}" method="POST">
