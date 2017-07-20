@@ -30,6 +30,7 @@ Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
 Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
 Route::get('/consultacategorias', 'categoriascontroller@consultarCategorias');
+Route::get('/categoriasPDF', 'categoriascontroller@pdf');
 
 //Articulos
 Route::get('/registrararticulos', 'articuloscontroller@registrar');
