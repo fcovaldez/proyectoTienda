@@ -36,7 +36,7 @@ class categoriascontroller extends Controller
     }
     public function consultarCategorias(){
         $categorias=Categorias::all();
-        return view('', compact('categorias'));
+        return view('consultacategorias', compact('categorias'));
     }
 
      public function actualizar(Request $datos, $id){
@@ -47,5 +47,13 @@ class categoriascontroller extends Controller
         flash('¡Se ha actualizado la categoria correctamente!')->success();
 
         return redirect('/');
+    }
+    public function pdf(){
+        $categorias=Categorias::all();
+        $vista=view('categoriasPDF', compact('categorias'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaCategorias.pdf');
     }
 }

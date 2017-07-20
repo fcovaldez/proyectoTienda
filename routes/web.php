@@ -29,14 +29,14 @@ Route::post('/guardarcategorias','categoriascontroller@guardar');
 Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
 Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
-
+Route::get('/consultacategorias', 'categoriascontroller@consultarCategorias');
+Route::get('/categoriasPDF', 'categoriascontroller@pdf');
 
 //Articulos
-Route::get('/registrararticulos', 'articuloscontroller@registrar');
-Route::post('/guardararticulos','articulosontroller@guardar');
+Route::get('/registrararticulo', 'articuloscontroller@registrar');
+Route::post('/guardararticulo','articuloscontroller@guardar');
 Route::get('/eliminararticulos/{id}', 'articuloscontroller@eliminar');
 Route::get('/editararticulos/{id}', 'articuloscontroller@editar');
 Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
 Route::get('/articulosPDF', 'articuloscontroller@pdf');
 Route::get('/consultararticulos', 'articuloscontroller@consultar');
-Route::get('/consultarCategorias', 'categoriascontroller@consultarCategorias');
