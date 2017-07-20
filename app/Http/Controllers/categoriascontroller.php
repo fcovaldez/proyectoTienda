@@ -48,4 +48,12 @@ class categoriascontroller extends Controller
 
         return redirect('/');
     }
+    public function pdf(){
+        $categorias=Categorias::all();
+        $vista=view('categoriasPDF', compact('categorias'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaCategorias.pdf');
+    }
 }

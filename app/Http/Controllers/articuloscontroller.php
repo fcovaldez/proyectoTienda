@@ -55,4 +55,12 @@ class articuloscontroller extends Controller
         $articulos=Articulos::all();
         return view('', compact('articulos'));
 }
+public function pdf(){
+        $articulos=Articulos::all();
+        $vista=view('articulosPDF', compact('articulos'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaArticulos.pdf');
+    }
 }
