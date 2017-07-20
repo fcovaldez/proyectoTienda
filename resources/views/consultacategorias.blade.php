@@ -4,7 +4,6 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Consultar categorias</th>
       <th>Nombre</th>
       <th>Descripcion</th>
       <th><a href="{{url('/')}}">PDF</th>
