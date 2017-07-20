@@ -34,7 +34,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Registrar Categoria</a></li>
+            <li><a href="{{url('/registrarcategorias')}}">Registrar Categoria</a></li>
             <li><a href="#">Consultar Categorias</a></li>
           </ul>
         </li>
