@@ -43,6 +43,8 @@ class articuloscontroller extends Controller
         $articulos=Articulos::find($id);
         $articulos->nombre=$datos->input('nombre');
         $articulos->descripcion=$datos->input('descripcion');
+        $articulos->precio=$datos->input('precio');
+    	$articulos->existencia=$datos->input('existencia');
         $articulos->save();//Guarda objeto
         flash('¡Se ha actualizado el articulo correctamente!')->success();
 
