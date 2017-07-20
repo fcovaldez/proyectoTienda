@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Articulos;
 use App\Categorias;
+use DB;
 
 class articuloscontroller extends Controller
 {
@@ -52,7 +53,10 @@ class articuloscontroller extends Controller
         return redirect('/');
     }
     public function consultararticulos(){
-        $articulos=Articulos::all();
-        return view('', compact('articulos'));
+        $articulos=DB::table('articulos')
+        ->join ('categorias','categorias.id', '=','articulos.idcategoria')
+        ->select('articulos.*','categorias.nombre')
+        ->get();
+        return view('consultarArticulo', compact('articulos'));
 }
 }
