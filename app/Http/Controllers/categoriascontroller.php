@@ -9,12 +9,11 @@ use App\Categorias;
 class categoriascontroller extends Controller
 {
     public function registrar(){
-    	$categorias=Categorias::all();
-    	return view('registrarCategorias', compact('categorias'));
+    	return view('registrarCategorias');
     }
 
     public function guardar(Request $datos){
-    	$categorias= new Categorias(); //objeto del modelo encargado para registrar encargados
+    	$categorias= new Categorias(); 
     	$categorias->nombre=$datos->input('nombre');
     	$categorias->descripcion=$datos->input('descripcion');
     	$categorias->save();

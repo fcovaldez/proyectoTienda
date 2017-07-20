@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Articulos;
+use App\Categorias;
 
 class articuloscontroller extends Controller
 {
     public function registrar(){
-    	$articulos=Articulos::all();
-    	return view('registrarArticulos', compact('articulos'));
+    	$categorias=Categorias::all();
+    	return view('registrarArticulos', compact('categorias'));
     }
 
     public function guardar(Request $datos){
-    	$articulos= new Articulos(); //objeto del modelo encargado para registrar encargados
+    	$articulos= new Articulos(); 
     	$articulos->nombre=$datos->input('nombre');
     	$articulos->descripcion=$datos->input('descripcion');
     	$articulos->precio=$datos->input('precio');
