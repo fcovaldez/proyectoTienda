@@ -42,7 +42,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articulos<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Registrar Articulo</a></li>
-            <li><a href="#">Consultar Articulos</a></li>
+            <li><a href="{{url('/consultarcategorias')}}">Consultar Articulos</a></li>
           </ul>
         </li>
       </ul>

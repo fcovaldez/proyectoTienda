@@ -29,7 +29,7 @@ Route::post('/guardarcategorias','categoriasontroller@guardar');
 Route::get('/eliminarcategorias/{id}', 'categoriascontroller@eliminar');
 Route::get('/editarcategorias/{id}', 'categoriascontroller@editar');
 Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
-
+Route::get('/consultarCategorias', 'categoriascontroller@consultarCategorias');
 
 //Articulos
 Route::get('/registrararticulos', 'articuloscontroller@registrar');
@@ -39,4 +39,3 @@ Route::get('/editararticulos/{id}', 'articuloscontroller@editar');
 Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
 Route::get('/articulosPDF', 'articuloscontroller@pdf');
 Route::get('/consultararticulos', 'articuloscontroller@consultar');
-Route::get('/consultarCategorias', 'categoriascontroller@consultarCategorias');
