@@ -8,7 +8,6 @@
   <h1>Listado de Articulos</h1>
   <hr>
   @foreach($articulos as $p)
-
       {{$p->nombre}}
       {{$p->descripcion}}
       {{$p->precio}}
