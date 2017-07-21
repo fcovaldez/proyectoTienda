@@ -61,13 +61,16 @@ class articuloscontroller extends Controller
     	$articulos->delete();
         flash('¡Articulo Eliminado!')->success();
 
-    	return redirect('/');
+    	return redirect('/consultarArticulo');
     }
 
     public function editar($id){
-        $articulos=Articulos::find($id);
-               
-        return view('', compact('articulos'));
+        $articulos=DB::table('articulos')->where ('articulos.id','=',$id)
+        ->join ('categorias','categorias.id', '=','articulos.idcategoria')
+        ->select('articulos.*','categorias.nombre as nombreCategoria')
+        ->first();
+        $categorias=Categorias::all();      
+        return view('editararticulos', compact('articulos','categorias'));
     }
 
     public function actualizar(Request $datos, $id){
@@ -76,10 +79,11 @@ class articuloscontroller extends Controller
         $articulos->descripcion=$datos->input('descripcion');
         $articulos->precio=$datos->input('precio');
     	$articulos->existencia=$datos->input('existencia');
+         $articulos->idcategoria=$datos->input('categoria');
         $articulos->save();//Guarda objeto
         flash('¡Se ha actualizado el articulo correctamente!')->success();
 
-        return redirect('/');
+        return redirect('/consultarArticulo');
     }
     public function consultararticulos(){
         $articulos=DB::table('articulos')
