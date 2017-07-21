@@ -16,7 +16,7 @@
       <td>{{$p->descripcion}}</td>
       
       <td>
-        <a href="{{url('/editar')}}/{{$p->id}}" class="btn btn-xs btn-primary">
+        <a href="{{url('/editarcategorias')}}/{{$p->id}}" class="btn btn-xs btn-primary">
         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
         <a href="{{url('/eliminar')}}/{{$p->id}}" class="btn btn-xs btn-danger">
         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
@@ -24,6 +24,11 @@
       </tr>
     @endforeach
   </tbody>
-  
 </table>
+@include('flash::message')
+<script type="text/javascript">
+    setTimeout(function() {
+      $(".alert").fadeOut(1500);
+    },1500);
+</script>
 @stop
