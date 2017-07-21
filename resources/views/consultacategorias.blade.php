@@ -18,7 +18,7 @@
       <td>
         <a href="{{url('/editar')}}/{{$p->id}}" class="btn btn-xs btn-primary">
         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-        <a href="{{url('/eliminar')}}/{{$p->id}}" class="btn btn-xs btn-danger">
+        <a href="{{url('/eliminarcategorias')}}/{{$p->id}}" class="btn btn-xs btn-danger">
         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
       </td>       
       </tr>

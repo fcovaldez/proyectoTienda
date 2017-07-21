@@ -30,7 +30,7 @@ class categoriascontroller extends Controller
     	$categorias->delete();
         flash('¡Categoria Eliminada!')->success();
 
-    	return redirect('/');
+    	return redirect('/consultacategorias');
     }
 
     public function editar($id){

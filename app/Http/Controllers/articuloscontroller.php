@@ -61,7 +61,7 @@ class articuloscontroller extends Controller
     	$articulos->delete();
         flash('¡Articulo Eliminado!')->success();
 
-    	return redirect('/');
+    	return redirect('/consultarArticulo');
     }
 
     public function editar($id){

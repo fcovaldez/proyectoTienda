@@ -33,6 +33,7 @@ Route::get('/consultacategorias', 'categoriascontroller@consultarCategorias');
 Route::get('/categoriasPDF', 'categoriascontroller@pdf');
 
 
+
 //Articulos
 Route::get('/registrararticulo', 'articuloscontroller@registrar');
 Route::post('/guardararticulo','articuloscontroller@guardar');
