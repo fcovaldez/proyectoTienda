@@ -13,7 +13,7 @@
 	</div>
 	<div>
 		<button type="submit" class="btn btn-primary">Actualizar</button>
-		<a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>
+		<a href="{{url('/consultacategorias')}}" class="btn btn-danger">Cancelar</a>
 	</div>
 </form>
 @stop

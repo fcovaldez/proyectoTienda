@@ -36,7 +36,7 @@ class categoriascontroller extends Controller
     public function editar($id){
         $categorias=Categorias::find($id);
                
-        return view('', compact('categorias'));
+        return view('/editarcategorias', compact('categorias'));
     }
     public function consultarCategorias(){
         $categorias=Categorias::all();
