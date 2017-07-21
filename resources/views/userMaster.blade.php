@@ -25,6 +25,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
           <!--nombre categorias!-->
+          @foreach($categorias as $c)
+          <li><a href="">{{$c->nombre}}</a></li>
+          @endforeach
           </ul>
         </li>
       </ul>

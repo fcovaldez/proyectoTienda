@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categorias;
+use App\Articulos;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('inicio');
     }
 
     /**
@@ -24,5 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function inicio(){
+        $articulos = Articulos::all();
+        $categorias= Categorias::all();
+        return view('inicio',compact('articulos','categorias'));
     }
 }

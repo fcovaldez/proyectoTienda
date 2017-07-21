@@ -5,7 +5,9 @@
      <div class="col-md-3">
                 <p class="lead">Proyecto Tec</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
+                    @foreach($categorias as $c)
+                    <a href="#" class="list-group-item">{{$c->nombre}}</a>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-9">
