@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Articulos;
 use App\Categorias;
 use DB;
+use Excel;
+use Storage;
 
 class articuloscontroller extends Controller
 {
@@ -31,6 +33,28 @@ class articuloscontroller extends Controller
 
     	return redirect('/consultarArticulo');
 	}
+    public function subirArchivo(Request $datos){
+        $archivo=$datos->file('subirArchivo');
+        $nombreOriginal = $archivo->getClientOriginalName();
+        $extension = $archivo->getClientOriginalExtension();
+        $temporal = Storage::disk('archivos')->put($nombreOriginal, \File::get($archivo));
+        $ruta = storage_path('archivos')."/".$nombreOriginal;
+        if($temporal){
+            Excel::selectSheetsByIndex(0)->load($ruta,function($hoja){
+                $hoja->each(function($fila){
+                $articulos= new Articulos(); 
+                $articulos->nombre=$fila->nombre;
+    	        $articulos->descripcion=$fila->descripcion;
+    	        $articulos->precio=$fila->precio;
+    	        $articulos->existencia=$fila->existencia;
+                $articulos->idcategoria=$fila->idcategoria;
+                $articulos->save();
+                });
+            });
+        }
+        
+    return redirect('/consultarArticulo');
+    }
 
 	public function eliminar($id){
     	$articulos=Articulos::find($id);
@@ -60,7 +84,7 @@ class articuloscontroller extends Controller
     public function consultararticulos(){
         $articulos=DB::table('articulos')
         ->join ('categorias','categorias.id', '=','articulos.idcategoria')
-        ->select('articulos.*','categorias.nombre')
+        ->select('articulos.*','categorias.nombre as nombreCategoria')
         ->get();
         return view('consultarArticulo', compact('articulos'));
 }

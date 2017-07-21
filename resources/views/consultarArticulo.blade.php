@@ -20,7 +20,7 @@
             <td>{{$a->descripcion}}</td>
             <td>{{$a->precio}}</td>
             <td>{{$a->existencia}}</td>
-            <td>{{$a->nombre}}</td>
+            <td>{{$a->nombreCategoria}}</td>
             <td>
                 <a href="" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                 <a href="" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>

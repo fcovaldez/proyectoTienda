@@ -41,3 +41,4 @@ Route::get('/editararticulos/{id}', 'articuloscontroller@editar');
 Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
 Route::get('/articulosPDF', 'articuloscontroller@pdf');
 Route::get('/consultarArticulo', 'articuloscontroller@consultararticulos');
+Route::post('/guardararticuloCSV','articuloscontroller@subirArchivo');
