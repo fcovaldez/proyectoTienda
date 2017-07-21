@@ -24,6 +24,11 @@
       </tr>
     @endforeach
   </tbody>
-  
 </table>
+@include('flash::message')
+<script type="text/javascript">
+    setTimeout(function() {
+      $(".alert").fadeOut(1500);
+    },1500);
+</script>
 @stop
