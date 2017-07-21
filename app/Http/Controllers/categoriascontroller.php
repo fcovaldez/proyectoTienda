@@ -8,6 +8,10 @@ use App\Categorias;
 
 class categoriascontroller extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:admin');
+    }
+
     public function registrar(){
     	return view('registrarcategorias');
     }

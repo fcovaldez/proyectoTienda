@@ -10,6 +10,10 @@ use DB;
 
 class articuloscontroller extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:admin');
+    }
+    
     public function registrar(){
     	$categorias=Categorias::all();
     	return view('registrararticulos', compact('categorias'));
