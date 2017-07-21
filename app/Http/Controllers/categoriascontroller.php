@@ -50,7 +50,7 @@ class categoriascontroller extends Controller
         $categorias->save();//Guarda objeto
         flash('¡Se ha actualizado la categoria correctamente!')->success();
 
-        return redirect('/');
+        return redirect('/consultacategorias');
     }
     public function pdf(){
         $categorias=Categorias::all();
