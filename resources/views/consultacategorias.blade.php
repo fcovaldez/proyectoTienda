@@ -6,7 +6,7 @@
     <tr>
       <th>Nombre</th>
       <th>Descripcion</th>
-      <th><a href="{{url('/')}}">PDF</th>
+      <th><a href="{{url('/categoriasPDF')}}">PDF</th>
     </tr>
   </thead>
   <tbody>

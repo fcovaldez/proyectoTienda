@@ -9,7 +9,7 @@ use App\Categorias;
 class categoriascontroller extends Controller
 {
     public function registrar(){
-    	return view('registrarCategorias');
+    	return view('registrarcategorias');
     }
 
     public function guardar(Request $datos){
@@ -47,5 +47,13 @@ class categoriascontroller extends Controller
         flash('¡Se ha actualizado la categoria correctamente!')->success();
 
         return redirect('/');
+    }
+    public function pdf(){
+        $categorias=Categorias::all();
+        $vista=view('categoriasPDF', compact('categorias'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaCategorias.pdf');
     }
 }

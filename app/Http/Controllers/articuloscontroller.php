@@ -12,7 +12,7 @@ class articuloscontroller extends Controller
 {
     public function registrar(){
     	$categorias=Categorias::all();
-    	return view('registrarArticulos', compact('categorias'));
+    	return view('registrararticulos', compact('categorias'));
     }
 
     public function guardar(Request $datos){
@@ -21,10 +21,11 @@ class articuloscontroller extends Controller
     	$articulos->descripcion=$datos->input('descripcion');
     	$articulos->precio=$datos->input('precio');
     	$articulos->existencia=$datos->input('existencia');
+        $articulos->idencargado=$datos->input('encargado');
     	$articulos->save();
         flash('¡Articulo guardado con éxito!')->success();
 
-    	return redirect('/');
+    	return redirect('/consultarArticulo');
 	}
 
 	public function eliminar($id){
@@ -59,4 +60,12 @@ class articuloscontroller extends Controller
         ->get();
         return view('consultarArticulo', compact('articulos'));
 }
+public function pdf(){
+        $articulos=Articulos::all();
+        $vista=view('articulosPDF', compact('articulos'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaArticulos.pdf');
+    }
 }
