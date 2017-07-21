@@ -22,6 +22,7 @@ Route::get('/admin','AdminController@index');
 Route::get('/admin/logout','AdminLoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','HomeController@inicio');
+Route::get('/articulosporCategoria/{id}','HomeController@articulosporCategoria');
 
 
 //Categorias

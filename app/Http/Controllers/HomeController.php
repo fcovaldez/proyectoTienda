@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categorias;
 use App\Articulos;
+use DB;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('inicio');
+        $this->middleware('auth')->except('inicio','articulosporCategoria');
     }
 
     /**
@@ -28,8 +29,20 @@ class HomeController extends Controller
         return view('home');
     }
     public function inicio(){
-        $articulos = Articulos::all();
         $categorias= Categorias::all();
+        $articulos= DB::table('articulos')
+        ->orderBy('nombre')
+        ->take(12)
+        ->get();
         return view('inicio',compact('articulos','categorias'));
+    }
+    public function articulosporCategoria($id){
+    $articulos = DB::table('articulos')
+    ->select('*')
+    ->where('idcategoria','=',$id)
+    ->orderBy('nombre')
+    ->get();
+    $categorias=Categorias::all();
+    return view('articulosPorCategoria',compact('articulos','categorias'));
     }
 }
