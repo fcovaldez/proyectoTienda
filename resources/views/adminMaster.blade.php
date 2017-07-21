@@ -16,10 +16,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      @if (Auth::guest())
+      @if (Auth::guard('web')->check() || Auth::guest())
       <a class="navbar-brand" href="#">Tienda</a>
       </div>
-    @else
+    @elseif(Auth::guard('admin')->check())
     <a class="navbar-brand" href="#">Tienda</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

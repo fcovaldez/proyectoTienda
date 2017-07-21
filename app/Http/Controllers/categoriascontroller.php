@@ -23,7 +23,7 @@ class categoriascontroller extends Controller
     	$categorias->save();
         flash('¡Categoria guardada con éxito!')->success();
 
-    	return redirect('/');
+    	return redirect('/consultacategorias');
 	}
     	public function eliminar($id){
     	$categorias=Categorias::find($id);

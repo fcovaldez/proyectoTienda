@@ -10,7 +10,7 @@
 	</div>
 	<div class="form-group">
 		<label for="descripcion">Descripcion:</label>
-		<input type="text" class="form-control" name="correo" required>
+		<input type="text" class="form-control" name="descripcion" required>
 	</div>
 	<div>
 		<button type="submit" class="btn btn-primary">Registrar</button>

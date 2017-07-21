@@ -25,7 +25,7 @@ class articuloscontroller extends Controller
     	$articulos->descripcion=$datos->input('descripcion');
     	$articulos->precio=$datos->input('precio');
     	$articulos->existencia=$datos->input('existencia');
-        $articulos->idencargado=$datos->input('encargado');
+        $articulos->idcategoria=$datos->input('categoria');
     	$articulos->save();
         flash('¡Articulo guardado con éxito!')->success();
 

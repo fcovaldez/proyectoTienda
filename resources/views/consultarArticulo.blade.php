@@ -22,9 +22,8 @@
             <td>{{$a->existencia}}</td>
             <td>{{$a->nombre}}</td>
             <td>
-                <a href="{{url('/asignarProyecto')}}/{{$p->id}}" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-                <a href="{{url('/editarProyecto')}}/{{$p->id}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                <a href="{{url('/eliminarProyecto')}}/{{$p->id}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <a href="" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                <a href="" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
             </td>
         </tr>
     @endforeach
