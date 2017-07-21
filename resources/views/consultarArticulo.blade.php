@@ -22,13 +22,22 @@
             <td>{{$a->existencia}}</td>
             <td>{{$a->nombreCategoria}}</td>
             <td>
+
                 <a href="" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                 <a href="{{url('/eliminararticulos')}}/{{$a->id}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+
+                <a href="{{url('/editararticulos')}}/{{$a->id}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                <a href="" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+
             </td>
         </tr>
     @endforeach
     </tbody>
-    
 </table>
-
+@include('flash::message')
+<script type="text/javascript">
+    setTimeout(function() {
+      $(".alert").fadeOut(1500);
+    },1500);
+</script>
 @stop
