@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('inicio','articulosporCategoria');
+        $this->middleware('guest')->except('home');
     }
 
     /**
@@ -44,5 +44,10 @@ class HomeController extends Controller
     ->get();
     $categorias=Categorias::all();
     return view('articulosPorCategoria',compact('articulos','categorias'));
+    }
+    public function articuloIndividual($id){
+        $articulo=Articulos::find($id);
+        $categorias=Categorias::all();
+        return view('articuloIndividual',compact('articulo','categorias'));
     }
 }

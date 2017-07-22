@@ -46,7 +46,7 @@
                     <img src="http://placehold.it/320x150" alt="">
                     <div class="caption">
                     <h4 class="pull-right">${{$a->precio}}</h4>
-                    <h4><a href="#">{{$a->nombre}}</a>
+                    <h4><a href="{{url('articuloIndividual')}}/{{$a->id}}">{{$a->nombre}}</a>
                     </h4>
                 </div>
                 <div class="ratings">
