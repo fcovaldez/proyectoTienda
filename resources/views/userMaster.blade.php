@@ -18,19 +18,7 @@
       </button>
       <a class="navbar-brand" href="{{url('/')}}">Tienda</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-          <!--nombre categorias!-->
-          @foreach($categorias as $c)
-          <li><a href="{{url('/articulosporCategoria')}}/{{$c->id}}">{{$c->nombre}}</a></li>
-          @endforeach
-          </ul>
-        </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::guest())
         <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
