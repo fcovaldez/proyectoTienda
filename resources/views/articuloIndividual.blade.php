@@ -3,7 +3,7 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-        <p class="lead">Proyecto Tec</p>
+        <p class="lead">Categorias</p>
             <div class="col-md-3">
                 <div class="list-group">
                     @foreach($categorias as $c)
@@ -21,41 +21,47 @@
                         <p>{{$articulo->descripcion}}</p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right">3 reviews</p>
-                        <p>
+                        <p class="pull-right">Comentarios: {{$totalComentarios}}</p>
+                        <p>Calificacion: 
+                            @for($i=0;$i<$articulo->promedioRating;$i++)
                             <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 stars
+                            @endfor
                         </p>
                     </div>
                 </div>
-
+                <form action="{{url('/comentarioArticulo')}}/{{$articulo->id}}" method="POST">
+                <input type="hidden" id="token" name="_token" value="{{csrf_token()}}">
                 <div class="well">
+                <p>Calificar:<span id="Estrellas"> </span></p>
+                <input type="text" name="ratingArt" id="ratingArt" require value="3" hidden="true">
+                <input type="text" name="comentario" class="form-control" required>
                     <div class="text-right">
-                        <a class="btn btn-success">Comentar</a>
+                    <button class="btn btn-primary" type="submit">Comentar</button>
                     </div>
-
+                    <script>
+                    $('#Estrellas').starrr({
+                        rating:3,
+                        change:function(e,valor){
+                           $("#ratingArt").val(valor);
+                        }
+                    });
+                    </script>
+                </form>
                     <hr>
-
                     <div class="row">
                         <div class="col-md-12">
+                            @foreach($comentarios as $c)
+                            @for($i=0;$i<$c->rating;$i++)
                             <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
-                            <span class="pull-right">10 days ago</span>
-                            <p>This product was great in terms of quality. I would definitely buy another!</p>
+                            @endfor
+                            {{$c->correo}}
+                            <p>{{$c->comentario}}</p>
+                            <hr>
+                            @endforeach
                         </div>
                     </div>
-
                 </div>
-
+                
             </div>
-
         </div>
 @stop

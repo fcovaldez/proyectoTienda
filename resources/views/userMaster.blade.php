@@ -5,6 +5,9 @@
 	<title>User Master</title>
     <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
     <script src="{{asset("js/jquery-3.2.1.js")}}"></script>
+    <link rel="stylesheet" href="{{asset("css/starrr.css")}}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="{{asset("js/starrr.js")}}"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">

@@ -2,6 +2,7 @@
 @section('contenido')
 <div class="container">
     <div class="row">
+    <hr><hr>
      <div class="col-md-3">
                 <p class="lead">Proyecto Tec</p>
                 <div class="list-group">

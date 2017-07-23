@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','HomeController@inicio');
 Route::get('/articulosporCategoria/{id}','HomeController@articulosporCategoria');
 Route::get('/articuloIndividual/{id}','HomeController@articuloIndividual');
+Route::post('/comentarioArticulo/{id}','HomeController@comentar');
 
 
 //Categorias

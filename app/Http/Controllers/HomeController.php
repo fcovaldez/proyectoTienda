@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categorias;
 use App\Articulos;
+use App\Comentarios;
 use DB;
 
 class HomeController extends Controller
@@ -48,6 +49,31 @@ class HomeController extends Controller
     public function articuloIndividual($id){
         $articulo=Articulos::find($id);
         $categorias=Categorias::all();
-        return view('articuloIndividual',compact('articulo','categorias'));
+        $comentarios= DB::table('comentarios')
+        ->join('articulos','articulos.id','=','comentarios.idarticulo')
+        ->join('users','users.id','=','comentarios.idusuario')
+        ->where('articulos.id','=',$id)
+        ->select('comentarios.*','users.email as correo')
+        ->get();
+        $totalComentarios=DB::table('comentarios')
+        ->where('idarticulo','=',$id)
+        ->count('comentario');
+        return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios'));
+    }
+    public function comentar($id,Request $datos){
+        $comentario = new Comentarios();
+        $comentario->idusuario=Auth()->user()->id;
+        $comentario->idarticulo= $id;
+        $comentario->comentario=$datos->input('comentario');
+        $comentario->rating=$datos->input('ratingArt');
+        $comentario->save();
+        $promediorating= DB::table('comentarios')
+        ->where('idarticulo','=',$id)
+        ->groupBy('idarticulo')
+        ->avg('rating');
+        $actualizar=DB::table('articulos')
+        ->where('id','=',$id)
+        ->update(array('promedioRating'=>$promediorating));
+        return redirect('/articuloIndividual/'.$id); 
     }
 }
