@@ -19,6 +19,7 @@
                         <h4 class="pull-right">${{$articulo->precio}}</h4>
                         <h4><a href="#">{{$articulo->nombre}}</a></h4>
                         <p>{{$articulo->descripcion}}</p>
+                        <a href="{{url('/agregarcarrito')}}/{{$articulo->id}}" class="btn btn-primary">Agregar al carrito</a>
                     </div>
                     <div class="ratings">
                         <p class="pull-right">Comentarios: {{$totalComentarios}}</p>

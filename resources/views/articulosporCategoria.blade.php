@@ -49,6 +49,7 @@
                     <h4 class="pull-right">${{$a->precio}}</h4>
                     <h4><a href="{{url('articuloIndividual')}}/{{$a->id}}">{{$a->nombre}}</a>
                     </h4>
+                    <a href="{{url('/agregarcarrito')}}/{{$a->id}}" class="btn btn-primary btn-xs">Agregar al carrito</a>
                 </div>
                 <div class="ratings">
                 <p class="pull-right">15 reviews</p>

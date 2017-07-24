@@ -47,3 +47,10 @@ Route::post('/actualizararticulos/{id}','articuloscontroller@actualizar');
 Route::get('/articulosPDF', 'articuloscontroller@pdf');
 Route::get('/consultarArticulo', 'articuloscontroller@consultararticulos');
 Route::post('/guardararticuloCSV','articuloscontroller@subirArchivo');
+
+//Carrito
+Route::get('/carrito','carritoController@contenido');
+Route::get('/agregarcarrito/{id}','carritoController@agregar');
+Route::get('/vaciar','carritoController@vaciar');
+Route::post('/actualizarCarrito/{id}','carritoController@actualizar');
+Route::get('/removerdeCarrito/{id}','carritoController@remover');
