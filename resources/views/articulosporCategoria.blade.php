@@ -56,14 +56,11 @@
                     @endif
                 </div>
                 <div class="ratings">
-                <p class="pull-right">15 reviews</p>
-                <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </p>
+                        <p>Calificacion: 
+                            @for($i=0;$i<$a->promedioRating;$i++)
+                            <span class="glyphicon glyphicon-star"></span>
+                            @endfor
+                        </p>
                 </div>
                 </div>
             
