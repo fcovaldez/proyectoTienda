@@ -35,6 +35,7 @@ class HomeController extends Controller
         ->orderBy('nombre')
         ->take(12)
         ->get();
+        
         return view('inicio',compact('articulos','categorias'));
     }
     public function articulosporCategoria($id){

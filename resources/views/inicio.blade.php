@@ -48,17 +48,18 @@
                     <div class="caption">
                     <h4 class="pull-right">${{$a->precio}}</h4>
                     <h4><a href="{{url('articuloIndividual')}}/{{$a->id}}">{{$a->nombre}}</a></h4>
+                    @if($a->existencia>0)
                     <a href="{{url('/agregarcarrito')}}/{{$a->id}}" class="btn btn-primary btn-xs">Agregar al carrito</a>
+                    @else
+                    <label class="label label-danger">No disponible</label>
+                    @endif
                 </div>
                 <div class="ratings">
-                <p class="pull-right">15 reviews</p>
-                <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </p>
+                        <p>Calificacion: 
+                            @for($i=0;$i<$a->promedioRating;$i++)
+                            <span class="glyphicon glyphicon-star"></span>
+                            @endfor
+                        </p>
                 </div>
                 </div>
             
