@@ -54,3 +54,4 @@ Route::get('/agregarcarrito/{id}','carritoController@agregar');
 Route::get('/vaciar','carritoController@vaciar');
 Route::post('/actualizarCarrito/{id}','carritoController@actualizar');
 Route::get('/removerdeCarrito/{id}','carritoController@remover');
+Route::get('/detalleorden','carritoController@detalleOrden');

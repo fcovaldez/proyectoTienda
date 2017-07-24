@@ -31,8 +31,15 @@
         <td>Total Articulos:{{Cart::count()}}</td>
     </tr>
     </tbody>
+    @include('flash::message')
 </table>
 <a href="{{url('/')}}" class="btn btn-primary">Seguir comprando</a>
 <a href="{{url('/vaciar')}}" class="btn btn-warning">Vaciar Carrito</a>
-<a href="{{url('/')}}" class="btn btn-success">Realizar Pedido</a>
+<a href="{{url('/detalleorden')}}" class="btn btn-success">Realizar Pedido</a>
+
+<script type="text/javascript">
+    setTimeout(function() {
+      $(".alert").fadeOut(2000);
+    },1500);
+</script>
 @stop

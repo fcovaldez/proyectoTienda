@@ -33,4 +33,11 @@ class carritoController extends Controller
         Cart::update($id,$datos->cantidad);
         return back();
     }
+    public function detalleOrden(){
+        if(Cart::count()==0){
+            flash('No se puede realizar un pedido por que no tienes productos agregados al carrito')->error();
+            return back();
+        }
+        return view('detalleOrden');
+    }
 }
