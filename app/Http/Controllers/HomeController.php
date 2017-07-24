@@ -35,7 +35,7 @@ class HomeController extends Controller
         ->orderBy('nombre')
         ->take(12)
         ->get();
-        
+
         return view('inicio',compact('articulos','categorias'));
     }
     public function articulosporCategoria($id){
@@ -59,7 +59,13 @@ class HomeController extends Controller
         $totalComentarios=DB::table('comentarios')
         ->where('idarticulo','=',$id)
         ->count('comentario');
-        return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios'));
+        $yaComento= DB::table('comentarios')
+        ->join('articulos','articulos.id','=','comentarios.idarticulo')
+        ->join('users','users.id','=','comentarios.idusuario')
+        ->where('articulos.id','=',$id)
+        ->where('users.id','=',Auth()->user()->id)
+        ->first();
+        return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios','yaComento'));
     }
     public function comentar($id,Request $datos){
         $comentario = new Comentarios();

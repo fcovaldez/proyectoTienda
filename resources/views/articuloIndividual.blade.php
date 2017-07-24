@@ -37,10 +37,14 @@
                 <form action="{{url('/comentarioArticulo')}}/{{$articulo->id}}" method="POST">
                 <input type="hidden" id="token" name="_token" value="{{csrf_token()}}">
                 <div class="well">
-                <p>Calificar:<span id="Estrellas"> </span></p>
+                
                 <input type="text" name="ratingArt" id="ratingArt" require value="3" hidden="true">
+                @if($yaComento)
+                <p>Ya has comentado</p>
+                @else
+                <p>Calificar:<span id="Estrellas"> </span></p>
                 <input type="text" name="comentario" class="form-control" required>
-                    <div class="text-right">
+                <div class="text-right">
                     <button class="btn btn-primary" type="submit">Comentar</button>
                     </div>
                     <script>
@@ -51,6 +55,8 @@
                         }
                     });
                     </script>
+                @endif
+                    
                 </form>
                     <hr>
                     <div class="row">
