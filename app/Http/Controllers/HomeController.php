@@ -7,6 +7,7 @@ use App\Categorias;
 use App\Articulos;
 use App\Comentarios;
 use DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -59,13 +60,17 @@ class HomeController extends Controller
         $totalComentarios=DB::table('comentarios')
         ->where('idarticulo','=',$id)
         ->count('comentario');
+        if(Auth::guest()){
+            return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios'));
+        }
         $yaComento= DB::table('comentarios')
         ->join('articulos','articulos.id','=','comentarios.idarticulo')
         ->join('users','users.id','=','comentarios.idusuario')
         ->where('articulos.id','=',$id)
         ->where('users.id','=',Auth()->user()->id)
         ->first();
-        return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios','yaComento'));
+         return view('articuloIndividual',compact('articulo','categorias','comentarios','totalComentarios','yaComento'));
+        
     }
     public function comentar($id,Request $datos){
         $comentario = new Comentarios();

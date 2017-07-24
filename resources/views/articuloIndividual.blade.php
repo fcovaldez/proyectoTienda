@@ -37,7 +37,9 @@
                 <form action="{{url('/comentarioArticulo')}}/{{$articulo->id}}" method="POST">
                 <input type="hidden" id="token" name="_token" value="{{csrf_token()}}">
                 <div class="well">
-                
+                @if(Auth::guest())
+                Si quieres realizar un comentario por favor inicia sesion.
+                @else
                 <input type="text" name="ratingArt" id="ratingArt" require value="3" hidden="true">
                 @if($yaComento)
                 <p>Ya has comentado</p>
@@ -56,7 +58,7 @@
                     });
                     </script>
                 @endif
-                    
+                @endif
                 </form>
                     <hr>
                     <div class="row">
