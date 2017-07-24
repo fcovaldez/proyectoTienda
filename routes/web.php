@@ -56,6 +56,11 @@ Route::post('/actualizarCarrito/{id}','carritoController@actualizar');
 Route::get('/removerdeCarrito/{id}','carritoController@remover');
 Route::get('/detalleorden','carritoController@detalleOrden');
 
+//Comentarios
+Route::get('/consultaComentarios','comentariosController@consultaComentarios');
+Route::get('/eliminarComentario/{id}','comentariosController@eliminar');
+
+
 //paypal
 Route::get('payment', array(
 	'as' => 'payment',
