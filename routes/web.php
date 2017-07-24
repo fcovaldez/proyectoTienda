@@ -21,7 +21,7 @@ Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login
 Route::get('/admin','AdminController@index');
 Route::get('/admin/logout','AdminLoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','HomeController@inicio');
+Route::get('/','HomeController@inicio')->name('/');
 Route::get('/articulosporCategoria/{id}','HomeController@articulosporCategoria');
 Route::get('/articuloIndividual/{id}','HomeController@articuloIndividual');
 Route::post('/comentarioArticulo/{id}','HomeController@comentar');
@@ -55,3 +55,14 @@ Route::get('/vaciar','carritoController@vaciar');
 Route::post('/actualizarCarrito/{id}','carritoController@actualizar');
 Route::get('/removerdeCarrito/{id}','carritoController@remover');
 Route::get('/detalleorden','carritoController@detalleOrden');
+
+//paypal
+Route::get('payment', array(
+	'as' => 'payment',
+	'uses' => 'PaypalController@postPayment',
+));
+// Después de realizar el pago Paypal redirecciona a esta ruta
+Route::get('payment/status', array(
+	'as' => 'payment.status',
+	'uses' => 'PaypalController@getPaymentStatus',
+));

@@ -35,7 +35,7 @@
             <h3>Total:${{Cart::subtotal()}}</h3>
             <p>
                 <a href="{{url('/carrito')}}" class="btn btn-primary">Regresar</a>
-                <a href="{{url('/carrito')}}" class="btn btn-success">Pagar mediante PayPal</a>
+                <a href="{{ route('payment') }}" class="btn btn-success">Pagar mediante PayPal</a>
             </p>
         </div>
     </div>

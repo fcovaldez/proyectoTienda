@@ -9,6 +9,7 @@ return array(
     'Svg\\' => array($vendorDir . '/phenx/php-svg-lib/src'),
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
+    'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),

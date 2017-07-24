@@ -231,6 +231,7 @@ return [
         'PDF'=>Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];
