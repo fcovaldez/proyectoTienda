@@ -36,13 +36,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="{{asset('imagenes/banner1.jpg')}}" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="{{asset('imagenes/banner2.jpg')}}" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="{{asset('imagenes/banner3.jpg')}}" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -58,7 +58,7 @@
             @foreach($articulos as $a)
                 <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
-                    <img src="{{$a->imagenURL}}" class="img-thumbnail" alt="">
+                    <img src="{{asset($a->imagenURL)}}" class="img-thumbnail" alt="" width="100">
                     <div class="caption">
                     <h4 class="pull-right">${{$a->precio}}</h4>
                     <h4><a href="{{url('articuloIndividual')}}/{{$a->id}}">{{$a->nombre}}</a></h4>

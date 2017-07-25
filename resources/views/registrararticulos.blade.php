@@ -5,7 +5,7 @@
 <input id="token" type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<label for="img">Imagen</label>
-		<input type="file" class="form-control" name="img" accept="image/*" required>
+		<input type="file" class="form-control" name="img" accept="image/*">
 	</div>
 	<div class="form-group">
 		<label for="nombre">Nombre:</label>

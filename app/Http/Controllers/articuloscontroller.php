@@ -33,9 +33,10 @@ class articuloscontroller extends Controller
         $nombreOriginal = $img->getClientOriginalName();
         $extension = $img->getClientOriginalExtension();
         $temporal = Storage::disk('imagenes')->put($nombreOriginal, \File::get($img));
-        $ruta = storage_path('imagenes')."/".$nombreOriginal;
+        $ruta = public_path('imagenes')."/".$nombreOriginal;
         if($temporal){
-            $articulos->imagenURL=$ruta;
+            $urlparaVista = substr($ruta, 30);
+            $articulos->imagenURL=$urlparaVista;
             $articulos->save();
         }
         flash('¡Articulo guardado con éxito!')->success();

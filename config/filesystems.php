@@ -54,7 +54,8 @@ return [
         ],
         'imagenes'=> [
             'driver' => 'local',
-            'root' => storage_path('imagenes'),
+            'root' => public_path('imagenes'),
+            'visibility' => 'public',
         ],
 
         'public' => [
