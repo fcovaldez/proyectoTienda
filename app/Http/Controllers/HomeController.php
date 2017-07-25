@@ -96,8 +96,15 @@ class HomeController extends Controller
             ->where('precio', '>','500')
             ->select('articulos.*')
             ->get();
+        }
+         else if($filtro=="menores500"){
+            $articulos = DB::table('articulos')
+            ->where('precio', '<','500')
+            ->select('articulos.*')
+            ->get();
+        }
+       
             $categorias = Categorias::all();
             return view('inicio',compact('articulos','categorias'));
-        }
     }
 }

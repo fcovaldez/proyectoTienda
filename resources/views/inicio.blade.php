@@ -18,8 +18,8 @@
                 <option value="popular">Mas Popular</option>
                 <option value="mayores500">Mayor a 500</option>
                 <option value="menores500">Menor a 500</option>
-                <option value="mayoramenor">Ordenar precio de mayor a menor</option>
-                <option value="menoramayor">Ordenar precio de menor a mayor</option>
+                <option value="mayoramenor">Precio de mayor a menor</option>
+                <option value="menoramayor">Precio de menor a mayor</option>
         </select>
         <button type="submit" class="btn btn-primary btn-btn-xs">Filtrar</button>
         </form>
