@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('inicio','articulosporCategoria','articuloIndividual');
+        $this->middleware('auth')->except('inicio','articulosporCategoria','articuloIndividual','filtroInicio');
     }
 
     /**
@@ -87,5 +87,42 @@ class HomeController extends Controller
         ->where('id','=',$id)
         ->update(array('promedioRating'=>$promediorating));
         return redirect('/articuloIndividual/'.$id); 
+    }
+
+    public function filtroInicio(Request $datos){
+        $filtro=$datos->input('filtro');
+        if($filtro=="mayores500"){
+            $articulos = DB::table('articulos')
+            ->where('precio', '>','500')
+            ->select('articulos.*')
+            ->get();
+        }
+         else if($filtro=="menores500"){
+            $articulos = DB::table('articulos')
+            ->where('precio', '<','500')
+            ->select('articulos.*')
+            ->get();
+        }
+        else if($filtro=="menoramayor"){
+            $articulos = DB::table('articulos')
+            ->orderBy('precio', 'asc')
+            ->select('articulos.*')
+            ->get();
+        }
+         else if($filtro=="mayoramenor"){
+            $articulos = DB::table('articulos')
+            ->orderBy('precio', 'desc')
+            ->select('articulos.*')
+            ->get();
+        }
+         else if($filtro=="popular"){
+            $articulos = DB::table('articulos')
+            ->orderBy('promedioRating', 'desc')
+            ->select('articulos.*')
+            ->get();
+        }
+       
+            $categorias = Categorias::all();
+            return view('inicio',compact('articulos','categorias'));
     }
 }
