@@ -103,6 +103,12 @@ class HomeController extends Controller
             ->select('articulos.*')
             ->get();
         }
+        else if($filtro=="menoramayor"){
+            $articulos = DB::table('articulos')
+            ->orderBy('precio', 'asc')
+            ->select('articulos.*')
+            ->get();
+        }
        
             $categorias = Categorias::all();
             return view('inicio',compact('articulos','categorias'));
