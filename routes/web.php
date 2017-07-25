@@ -38,6 +38,7 @@ Route::get('/categoriasPDF', 'categoriascontroller@pdf');
 
 //Promociones
 Route::get('/registrarPromocion','promocionesController@registrar');
+Route::get('/consultaPromocion','promocionesController@consultarPromocion');
 
 
 //Articulos

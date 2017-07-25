@@ -9,8 +9,11 @@ use App\Promociones;
 class promocionesController extends Controller
 {
     public function registrar(){
-      $promociones=Promociones::all();
 
-      return view ('/registrarPromocion', compact('promociones'));
+      return view ('/registrarPromocion');
+    }
+    public function consultarPromocion(){
+      $promociones=Promociones::all();
+      return view('/consultarPromociones', compact('promociones'));
     }
 }
