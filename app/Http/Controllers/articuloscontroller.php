@@ -28,7 +28,16 @@ class articuloscontroller extends Controller
     	$articulos->precio=$datos->input('precio');
     	$articulos->existencia=$datos->input('existencia');
         $articulos->idcategoria=$datos->input('categoria');
-    	$articulos->save();
+        //imagen
+        $img = $datos->file('img');
+        $nombreOriginal = $img->getClientOriginalName();
+        $extension = $img->getClientOriginalExtension();
+        $temporal = Storage::disk('imagenes')->put($nombreOriginal, \File::get($img));
+        $ruta = storage_path('imagenes')."/".$nombreOriginal;
+        if($temporal){
+            $articulos->imagenURL=$ruta;
+            $articulos->save();
+        }
         flash('¡Articulo guardado con éxito!')->success();
 
     	return redirect('/consultarArticulo');

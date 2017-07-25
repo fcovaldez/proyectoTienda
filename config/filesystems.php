@@ -52,6 +52,10 @@ return [
             'driver' => 'local',
             'root' => storage_path('archivos'),
         ],
+        'imagenes'=> [
+            'driver' => 'local',
+            'root' => storage_path('imagenes'),
+        ],
 
         'public' => [
             'driver' => 'local',

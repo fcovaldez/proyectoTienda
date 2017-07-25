@@ -1,8 +1,12 @@
 @extends('adminMaster')
 
 @section('contenido')
-<form action="{{url('/guardararticulo')}}" method="POST">
+<form action="{{url('/guardararticulo')}}" method="POST" enctype="multipart/form-data">
 <input id="token" type="hidden" name="_token" value="{{csrf_token()}}">
+	<div class="form-group">
+		<label for="img">Imagen</label>
+		<input type="file" class="form-control" name="img" accept="image/*" required>
+	</div>
 	<div class="form-group">
 		<label for="nombre">Nombre:</label>
 		<input type="text" class="form-control" name="nombre" required>
