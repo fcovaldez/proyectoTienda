@@ -14,8 +14,8 @@
             <td>{{$a->id}}</td>
             <td>{{$a->descripcion}}</td>
             <td>
-                <a href="{{url('/editarPromociones')}}/{{$a->id}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                <a href="{{url('/eliminarPromociones')}}/{{$a->id}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <a href="{{url('/')}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                <a href="{{url('/')}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
             </td>
         </tr>
     @endforeach
