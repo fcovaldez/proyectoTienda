@@ -25,7 +25,7 @@ Route::get('/','HomeController@inicio')->name('/');
 Route::get('/articulosporCategoria/{id}','HomeController@articulosporCategoria');
 Route::get('/articuloIndividual/{id}','HomeController@articuloIndividual');
 Route::post('/comentarioArticulo/{id}','HomeController@comentar');
-
+Route::get('/filtrar','HomeController@filtroInicio');
 
 //Categorias
 Route::get('/registrarcategorias', 'categoriascontroller@registrar');
