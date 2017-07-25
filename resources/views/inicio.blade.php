@@ -45,7 +45,6 @@
                 <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
                     <img src="{{$a->imagenURL}}" class="img-thumbnail" alt="">
-
                     <div class="caption">
                     <h4 class="pull-right">${{$a->precio}}</h4>
                     <h4><a href="{{url('articuloIndividual')}}/{{$a->id}}">{{$a->nombre}}</a></h4>
