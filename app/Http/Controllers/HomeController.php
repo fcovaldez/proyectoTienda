@@ -115,6 +115,12 @@ class HomeController extends Controller
             ->select('articulos.*')
             ->get();
         }
+         else if($filtro=="popular"){
+            $articulos = DB::table('articulos')
+            ->orderBy('promedioRating', 'desc')
+            ->select('articulos.*')
+            ->get();
+        }
        
             $categorias = Categorias::all();
             return view('inicio',compact('articulos','categorias'));
