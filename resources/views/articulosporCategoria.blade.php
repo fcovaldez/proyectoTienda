@@ -10,6 +10,21 @@
                     <a href="{{url('/articulosporCategoria')}}/{{$c->id}}" class="list-group-item">{{$c->nombre}}</a>
                     @endforeach
                 </div>
+            <div class="form-group">
+        <label for="filtro">Filtros:</label>
+        <form action="{{url('/filtrarcategoria')}}" method="get">
+        <input type="text" name="idcategoria" hidden="true" required value="{{$filtro}}">
+        <select name="filtro" class="form-control">
+                <option value="default">Selecciona un filtro</option>
+                <option value="popular">Mas popular</option>
+                <option value="mayores500">Mayor a 500</option>
+                <option value="menores500">Menor a 500</option>
+                <option value="mayoramenor">Ordenar precio de mayor a menor</option>
+                <option value="menoramayor">Ordenar precio de menor a mayor</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-btn-xs">Filtrar</button>
+        </form>
+    </div>
             </div>
             <div class="col-md-9">
                 <div class="row carousel-holder">
