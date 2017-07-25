@@ -18,7 +18,7 @@
             <td>${{$c->price}} </td>
             <form action="{{url('/actualizarCarrito')}}/{{$c->rowId}}" method="post">
             <input id="token" type="hidden" name="_token" value="{{csrf_token()}}">
-            <td><input type="number" name="cantidad" min="1" max="30" value="{{$c->qty}}">
+            <td><input type="number" name="cantidad" min="1" max="{{$c->model->existencia}}" value="{{$c->qty}}">
             <button type="submit" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-refresh"></span></button>
             </td>
             </form>

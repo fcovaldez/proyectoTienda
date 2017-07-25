@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Cart;
 use App\Articulos;
+use DB;
 
 class carritoController extends Controller
 {
@@ -18,7 +19,12 @@ class carritoController extends Controller
 
     public function agregar($id){
         $articulo= Articulos::find($id);
-        Cart::add($id,$articulo->nombre,1,$articulo->precio);
+        Cart::add($articulo->id,$articulo->nombre,1,$articulo->precio)->associate($articulo);
+        foreach(Cart::content() as $c){
+            if($c->qty > $articulo->existencia){
+                $c->qty = $articulo->existencia;
+            }
+        }
         return back();
     }
     public function vaciar(){
