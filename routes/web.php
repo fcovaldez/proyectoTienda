@@ -36,6 +36,8 @@ Route::post('/actualizarcategorias/{id}','categoriascontroller@actualizar');
 Route::get('/consultacategorias', 'categoriascontroller@consultarCategorias');
 Route::get('/categoriasPDF', 'categoriascontroller@pdf');
 
+//Promociones
+Route::get('/registrarPromocion','promocionesController@registrar');
 
 
 //Articulos

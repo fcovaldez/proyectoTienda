@@ -9,7 +9,7 @@
     <input type="text" class="form-control" name="descripcion" required>
   </div>
   <div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Registrar</button>
     <a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>
   </div>
 </form>
