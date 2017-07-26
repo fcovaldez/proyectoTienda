@@ -3,8 +3,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Descripción</th>
-            
             <th><a href="{{url('/')}}">PDF</a></th>
         </tr>
     </thead>
@@ -14,8 +14,8 @@
             <td>{{$a->id}}</td>
             <td>{{$a->descripcion}}</td>
             <td>
-                <a href="{{url('/')}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                <a href="{{url('/')}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <a href="{{url('/enviarPromociones')}}/{{$a->id}}" class="btn btn-success btn-xs">Enviar</a>
+                <a href="{{url('/eliminarPromocion')}}/{{$a->id}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
             </td>
         </tr>
     @endforeach
