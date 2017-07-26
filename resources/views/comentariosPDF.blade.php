@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Listado de Categorias</title>
+  <title>Listado de Comentarios</title>
 </head>
 <body>
-  <h1>Listado de Categorias</h1>
+  <h1>Listado de Comentarios</h1>
   <style>
     table, th, td {
         border: 1px solid black;
