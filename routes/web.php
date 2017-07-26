@@ -64,7 +64,7 @@ Route::get('/detalleorden','carritoController@detalleOrden');
 //Comentarios
 Route::get('/consultaComentarios','comentariosController@consultaComentarios');
 Route::get('/eliminarComentario/{id}','comentariosController@eliminar');
-
+Route::get('/comentariosPDF', 'comentarioscontroller@pdf');
 
 //paypal
 Route::get('payment', array(

@@ -38,4 +38,16 @@ class comentariosController extends Controller
         ->update(array('promedioRating'=>$promediorating));
       return redirect('/consultaComentarios');
     }
+     public function pdf(){
+        $comentarios=DB::table('comentarios')
+        ->join('articulos','articulos.id','=','comentarios.idarticulo')
+        ->join('users','users.id','=','comentarios.idusuario')
+        ->select('comentarios.*','articulos.nombre','users.email')
+        ->get();
+        $vista=view('comentariosPDF', compact('comentarios'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaCategorias.pdf');
+    }
 }

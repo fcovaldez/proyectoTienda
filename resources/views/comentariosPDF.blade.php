@@ -14,13 +14,15 @@
     <br><br>
     <table>
         <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
+            <th>Comentario</th>
+            <th>Articulo</th>
+            <th>Usuario</th>
         </tr>
-        @foreach ($categorias as $c)
+        @foreach ($comentarios as $c)
         <tr>
+            <td>{{ $c->comentario}}</td>
             <td>{{ $c->nombre}}</td>
-            <td>{{ $c->descripcion}}</td>
+            <td>{{ $c->email}}</td>
         </tr>
         @endforeach
     </table>
