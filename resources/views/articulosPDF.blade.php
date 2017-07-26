@@ -6,13 +6,29 @@
 </head>
 <body>
   <h1>Listado de Articulos</h1>
-  <hr>
-  @foreach($articulos as $p)
-      {{$p->nombre}}
-      {{$p->descripcion}}
-      {{$p->precio}}
-      {{$p->existencia}}<br>
-
-  @endforeach
+  <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+    <br><br>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Existencia</th>
+        </tr>
+        @foreach ($articulos as $a)
+        <tr>
+            <td>{{ $a->nombre}}</td>
+            <td>{{ $a->descripcion}}</td>
+            <td> ${{ $a->precio}}</td>
+            <td>{{ $a->existencia}}</td>
+        </tr>
+        @endforeach
+    </table>
+</div>
 </body>
 </html>
+

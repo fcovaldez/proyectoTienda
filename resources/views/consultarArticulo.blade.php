@@ -9,7 +9,7 @@
             <th>Precio</th>
             <th>Existencia</th>
             <th>Categoria</th>
-            <th><a href="{{url('/')}}">PDF</a></th>
+            <th><a href="{{url('/articulosPDF')}}">PDF</a></th>
         </tr>
     </thead>
     <tbody>
