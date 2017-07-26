@@ -28,7 +28,7 @@ class promocionesController extends Controller
       flash('Promocion guardada con éxito!')->success();
       return redirect('/consultarPromocion');
     }
-<<<<<<< HEAD
+
     public function pdf(){
         $promociones=Promociones::all();
         $vista=view('promocionesPDF', compact('promociones'));
@@ -38,7 +38,6 @@ class promocionesController extends Controller
         return $pdf->stream('ListaArticulos.pdf');
     }
 
-=======
     public function eliminar($id){
         $promocion = promociones::find($id);
         $promocion->delete();
@@ -98,5 +97,5 @@ class promocionesController extends Controller
         flash('La promocion ha sido enviada correctamente')->success();
         return redirect('/consultarPromocion');
     }
->>>>>>> 818afb8879e46fc47a2b5e7004fba11a6d246f2c
+
 }
