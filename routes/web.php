@@ -41,7 +41,13 @@ Route::get('/filtrarcategoria', 'HomeController@filtroarticulocategoria');
 Route::get('/registrarPromocion','promocionesController@registrar');
 Route::post('/guardarPromocion','promocionesController@guardar');
 Route::get('/consultarPromocion','promocionesController@consultar');
+
 Route::get('/promocionesPDF', 'promocionescontroller@pdf');
+
+Route::get('/eliminarPromocion/{id}','promocionesController@eliminar');
+Route::get('/enviarPromociones/{id}','promocionesController@enviar');
+Route::post('/enviarCorreo/{id}','promocionesController@enviarCorreo');
+
 
 
 //Articulos
