@@ -5,7 +5,6 @@
         <tr>
             <th>Nombre</th>
             <th>Total que ha comprado</th>
-            <th>Total de cantidad</th>
             <th><a href="{{url('/clientesPDF')}}">PDF</a></th>
         </tr>
     </thead>
@@ -14,7 +13,6 @@
         <tr>
             <td>{{$a->nombre}}</td>
             <td>{{$a->total}}</td>
-            <td>{{$a->totalarticulos}}</td>
         </tr>
     @endforeach
     </tbody>

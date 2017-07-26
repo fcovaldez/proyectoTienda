@@ -16,13 +16,11 @@
         <tr>
             <th>Nombre</th>
             <th>Total que ha comprado</th>
-            <th>Total de articulos</th>
         </tr>
         @foreach ($clientes as $c)
         <tr>
             <td>{{ $c->nombre}}</td>
             <td>{{ $c->total}}</td>
-            <td>{{$c->totalarticulos}}</td>
         </tr>
         @endforeach
     </table>

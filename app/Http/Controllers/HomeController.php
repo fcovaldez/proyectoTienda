@@ -168,4 +168,5 @@ class HomeController extends Controller
             $categorias = Categorias::all();
             return view('inicio',compact('articulos','categorias'));
     }
+
 }

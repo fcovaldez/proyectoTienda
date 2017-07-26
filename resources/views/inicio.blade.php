@@ -28,6 +28,7 @@
             <div class="col-md-9">
                 <div class="row carousel-holder">
                     <div class="col-md-12">
+                         @include('flash::message')
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -80,5 +81,10 @@
             </div>
             @endforeach
     </div>
+<script type="text/javascript">
+    setTimeout(function() {
+      $(".alert").fadeOut(1500);
+    },1500);
+</script>
 </div>
 @stop

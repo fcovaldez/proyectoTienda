@@ -116,6 +116,7 @@ class PayPalController extends Controller
         if ($result->getState() == 'approved') { 
 			$this->guardarOrden();
 			Cart::destroy();
+            flash('¡Su compra ha sido exitosa!!!')->success();
 			return \Redirect::route('/')
 				->with('message', 'Compra realizada de forma correcta');
 		}
@@ -124,6 +125,7 @@ class PayPalController extends Controller
 	}
     public function guardarOrden(){
         $subtotal=Cart::subtotal();
+        $subtotal= str_replace(",","",$subtotal);
         $carrito=Cart::content();
         $envio=150;
         $orden= new Orden();

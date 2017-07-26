@@ -28,19 +28,19 @@ class AdminController extends Controller
     }
     public function consultaClientes(){
         $clientes = DB::table('orden')
-        ->select(DB::raw('users.name as nombre, SUM(orden.subtotal) as total,COUNT(detalleorden.cantidad) as totalarticulos'))
+        ->select(DB::raw('users.name as nombre, orden.idusuario, SUM(orden.subtotal) as total'))
         ->join('users','users.id','=','orden.idusuario')
-        ->join('detalleorden','detalleorden.idorden','=','orden.id')
-        ->groupBy('users.name')
+        //->join('detalleorden','detalleorden.idorden','=','orden.id')
+        ->groupBy('orden.idusuario','users.name')
         ->get();
         return view('consultaClientes',compact('clientes'));
     }
     public function clientePDF(){
         $clientes = DB::table('orden')
-        ->select(DB::raw('users.name as nombre, SUM(orden.subtotal) as total,COUNT(detalleorden.cantidad) as totalarticulos'))
+        ->select(DB::raw('users.name as nombre, orden.idusuario, SUM(orden.subtotal) as total'))
         ->join('users','users.id','=','orden.idusuario')
-        ->join('detalleorden','detalleorden.idorden','=','orden.id')
-        ->groupBy('users.name')
+        //->join('detalleorden','detalleorden.idorden','=','orden.id')
+        ->groupBy('orden.idusuario','users.name')
         ->get();
         $vista=view('clientesPDF', compact('clientes'));
         $pdf=\App::make('dompdf.wrapper');

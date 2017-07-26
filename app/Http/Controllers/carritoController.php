@@ -25,7 +25,9 @@ class carritoController extends Controller
                 $c->qty = $articulo->existencia;
             }
         }
+        flash('¡Se ha agregado al carrito correctamente!')->success();
         return back();
+         
     }
     public function vaciar(){
         Cart::destroy();

@@ -29,6 +29,7 @@ Route::get('/filtrar','HomeController@filtroInicio');
 Route::get('/consultaClientes','AdminController@consultaClientes');
 Route::get('/clientesPDF','AdminController@clientePDF');
 
+
 //Categorias
 Route::get('/registrarcategorias', 'categoriascontroller@registrar');
 Route::post('/guardarcategorias','categoriascontroller@guardar');

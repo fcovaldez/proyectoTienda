@@ -54,11 +54,17 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+
       @yield('contenido')
     </div>
   </div>
 </div>
-<footer class="text-center"> <hr>Negocios Electronicos II &copy; 2017 </footer>
+<footer class="text-center">
+<a href="https://web.facebook.com/?_rdc=1&_rdr" class="label label-primary">Facebook</a>
+<a href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw" class="label label-danger">Youtube</a>
+<a href="https://twitter.com/?lang=es" class="label label-default">Twitter</a>
+<a href="http://itculiacan.edu.mx/contactanos/" class="label label-success">Contacto</a>
+ <hr>Negocios Electronicos II &copy; 2017 </footer>
 <script src="{{asset("js/bootstrap.js")}}"></script>
 </body>
 </html>
