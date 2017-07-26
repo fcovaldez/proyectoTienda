@@ -36,6 +36,7 @@ class PayPalController extends Controller
         $items = array();
         $currency= 'MXN';
         $subtotal=Cart::subtotal();
+        $subtotal= str_replace(",","",$subtotal);
         foreach(Cart::content() as $carrito){
             $item= new Item();
             $item->setName($carrito->name)
