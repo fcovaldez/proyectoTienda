@@ -75,7 +75,7 @@ class promocionesController extends Controller
                      ->join('users','users.id','=','orden.idusuario')
                      ->join('detalleorden','detalleorden.idorden','=','orden.id')
                      ->groupBy('orden.idusuario','users.name','users.email')
-                      ->havingRaw('SUM(detalleorden.cantidad)>3')
+                      ->havingRaw('SUM(detalleorden.cantidad)>5')
                      ->get();
           foreach($clientes as $c){
             Mail::send('contenidoEmail',['promocion'=>$promocion], function($message) use($promocion,$c){
