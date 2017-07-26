@@ -26,6 +26,8 @@ Route::get('/articulosporCategoria/{id}','HomeController@articulosporCategoria')
 Route::get('/articuloIndividual/{id}','HomeController@articuloIndividual');
 Route::post('/comentarioArticulo/{id}','HomeController@comentar');
 Route::get('/filtrar','HomeController@filtroInicio');
+Route::get('/consultaClientes','AdminController@consultaClientes');
+Route::get('/clientesPDF','AdminController@clientePDF');
 
 //Categorias
 Route::get('/registrarcategorias', 'categoriascontroller@registrar');
@@ -41,9 +43,7 @@ Route::get('/filtrarcategoria', 'HomeController@filtroarticulocategoria');
 Route::get('/registrarPromocion','promocionesController@registrar');
 Route::post('/guardarPromocion','promocionesController@guardar');
 Route::get('/consultarPromocion','promocionesController@consultar');
-
 Route::get('/promocionesPDF', 'promocionescontroller@pdf');
-
 Route::get('/eliminarPromocion/{id}','promocionesController@eliminar');
 Route::get('/enviarPromociones/{id}','promocionesController@enviar');
 Route::post('/enviarCorreo/{id}','promocionesController@enviarCorreo');
