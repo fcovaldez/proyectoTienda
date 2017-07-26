@@ -27,5 +27,13 @@ class promocionesController extends Controller
       flash('Promocion guardada con éxito!')->success();
       return redirect('/consultarPromocion');
     }
+    public function pdf(){
+        $promociones=Promociones::all();
+        $vista=view('promocionesPDF', compact('promociones'));
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHTML($vista);
+        $pdf->setPaper('letter');
+        return $pdf->stream('ListaArticulos.pdf');
+    }
 
 }

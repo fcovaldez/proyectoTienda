@@ -5,13 +5,12 @@
         <tr>
             <th>Descripción</th>
             
-            <th><a href="{{url('/')}}">PDF</a></th>
+            <th><a href="{{url('/promocionesPDF')}}">PDF</a></th>
         </tr>
     </thead>
     <tbody>
     @foreach($promociones as $a)
         <tr>
-            <td>{{$a->id}}</td>
             <td>{{$a->descripcion}}</td>
             <td>
                 <a href="{{url('/')}}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
